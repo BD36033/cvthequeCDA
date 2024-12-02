@@ -1,0 +1,28 @@
+/* Style pour la navbar */
+.navbar {
+    background-color: #2fa4e7; /* Couleur de fond personnalisée */
+}
+
+.navbar .navbar-brand {
+    color: #fff; /* Couleur du texte de la marque */
+}
+
+.navbar .nav-link {
+    color: #fff; /* Couleur des liens */
+}
+
+.navbar .nav-link:hover {
+    color: #e0e0e0; /* Couleur des liens au survol */
+}
+
+.navbar .dropdown-menu {
+    background-color: #343a40; /* Couleur de fond du menu déroulant */
+}
+
+.navbar .dropdown-item {
+    color: #fff; /* Couleur des éléments du menu déroulant */
+}
+
+.navbar .dropdown-item:hover {
+    background-color: #495057; /* Couleur de fond au survol des éléments du menu déroulant */
+}
