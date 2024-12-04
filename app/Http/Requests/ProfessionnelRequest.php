@@ -27,9 +27,9 @@ class ProfessionnelRequest extends FormRequest
             'nom' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
             'numero_de_telephone' => ['required', 'string', 'max:20'],
-            'password' => ['required', 'string', 'max:25'],
+            'password' => ['nullable', 'string', 'max:25'],
             'metier_id' => ['required', 'exists:metiers,id'],
-            'competences' => ['required', 'array'],
+            'competences' => ['nullable', 'array'],
             'competences.*' => ['exists:competences,id'],
         ];
     }

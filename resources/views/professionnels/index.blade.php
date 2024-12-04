@@ -9,7 +9,6 @@
 <table class="table table-success w-75 m-auto rounded">
     <thead>
         <tr>
-            <th scope="col">#</th>
             <th scope="col">Nom</th>
             <th scope="col">Email</th>
             <th scope="col">Numéro de téléphone</th>
@@ -19,7 +18,6 @@
     <tbody>
         @foreach ($professionnels as $index => $professionnel)
         <tr class="{{ $index % 2 == 0 ? 'table-info' : 'table-primary' }}">
-            <th scope="row">{{ $professionnel->id }}</th>
             <td>{{ $professionnel->nom }}</td>
             <td>{{ $professionnel->email }}</td>
             <td>{{ $professionnel->numero_de_telephone }}</td>

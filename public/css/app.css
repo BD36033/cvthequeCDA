@@ -26,3 +26,10 @@
 .navbar .dropdown-item:hover {
     background-color: #495057; /* Couleur de fond au survol des éléments du menu déroulant */
 }
+select[multiple] {
+    height: auto; /* Ajuste la hauteur */
+    min-height: 100px; /* Hauteur minimale */
+    padding: 5px; /* Ajoute un peu de rembourrage */
+    border: 1px solid #ced4da; /* Bordure standard */
+    border-radius: 0.25rem; /* Coins arrondis */
+}

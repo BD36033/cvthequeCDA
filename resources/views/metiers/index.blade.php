@@ -11,7 +11,6 @@
 <table class="table table-success w-50 m-auto rounded">
     <thead>
       <tr>
-        <th scope="col">Numéro</th>
         <th scope="col">Intitulé</th>
         <th scope="col">Action</th>
       </tr>
@@ -19,7 +18,6 @@
     <tbody>
       @foreach ($metiers as $index => $metier)
       <tr class="{{ $index % 2 == 0 ? 'table-info' : 'table-primary' }}">
-        <th scope="row">{{ $metier->id }}</th>
         <td>{{ $metier->designation }}</td>
         <td class="d-flex justify-content-between">
           <form action="{{route('metiers.show', $metier->slug)}}" method="POST">
