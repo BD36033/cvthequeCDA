@@ -13,6 +13,12 @@ class Professionnel extends Model
         'nom',
         'email',
         'numero_de_telephone',
-        'adresse'
+        'password',
+        'metier_id'
     ];
+
+    public function competences()
+    {
+        return $this->belongsToMany(Competence::class, 'professionnel_competence');
+    }
 }
