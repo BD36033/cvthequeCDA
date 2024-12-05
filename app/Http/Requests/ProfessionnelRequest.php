@@ -31,6 +31,7 @@ class ProfessionnelRequest extends FormRequest
             'metier_id' => ['required', 'exists:metiers,id'],
             'competences' => ['nullable', 'array'],
             'competences.*' => ['exists:competences,id'],
+            'cv' => 'nullable|file|mimes:pdf|max:10048',
         ];
     }
 
@@ -48,6 +49,8 @@ class ProfessionnelRequest extends FormRequest
             'password.max' => 'Le mot de passe ne doit pas dépasser 25 caractères',
             'competences.array' => 'Les compétences doivent être un tableau',
             'competences.*.exists' => 'Une ou plusieurs compétences sélectionnées n\'existent pas',
+            'cv.mimes' => 'Le fichier doit être un PDF.',
+            'cv.max' => 'Le fichier ne doit pas dépasser 2 Mo.',
         ];
     }
 }

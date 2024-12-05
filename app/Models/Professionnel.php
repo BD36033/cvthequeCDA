@@ -14,7 +14,8 @@ class Professionnel extends Model
         'email',
         'numero_de_telephone',
         'password',
-        'metier_id'
+        'metier_id',
+        'cv_path'
     ];
 
     public function competences()

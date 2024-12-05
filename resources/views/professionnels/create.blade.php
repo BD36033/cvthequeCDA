@@ -6,7 +6,7 @@
             <h4>Ajouter un métier</h4>
         </div>
         <div class="card-body">
-            <form action="{{ route('professionnels.store') }}" method="POST">
+            <form action="{{ route('professionnels.store') }}" enctype="multipart/form-data" method="POST">
                 @csrf
 
                 <div class="mb-3">
@@ -69,6 +69,21 @@
                     </div>
                     @endforeach
                 </div>
+
+                <div class="mb-3">
+                    <label for="cv" class="form-label">Télécharger le CV (PDF)</label>
+                    <input type="file" class="form-control" id="cv" name="cv" accept=".pdf">
+                </div>
+                <!-- @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif -->
+
                 <div class="d-flex justify-content-between">
                     <a href="{{ route('professionnels.index') }}" class="btn btn-secondary">Retour</a>
                     <button type="submit" class="btn btn-primary">Enregistrer</button>

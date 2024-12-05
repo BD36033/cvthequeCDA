@@ -6,6 +6,9 @@
     <p>{{session('information')}}</p>
 </div>
 @endif
+<div class="d-flex w-100 justify-content-center m-4">
+    <a class="btn btn-primary" href="{{ route('professionnels.create') }}">Ajouter un professionnel</a>
+</div>
 <table class="table table-success w-75 m-auto rounded">
     <thead>
         <tr>
@@ -36,7 +39,4 @@
         @endforeach
     </tbody>
 </table>
-<div class="d-flex w-100 justify-content-center m-4">
-    <a class="btn btn-primary" href="{{ route('professionnels.create') }}">Ajouter un professionnel</a>
-</div>
 @endsection

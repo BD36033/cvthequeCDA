@@ -6,7 +6,7 @@
             <h4>Modifier la compétence</h4>
         </div>
         <div class="card-body">
-            <form action="{{ route('professionnels.update', $professionnel->id) }}" method="POST">
+            <form action="{{ route('professionnels.update', $professionnel->id) }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 @method('PUT')
 
@@ -76,13 +76,25 @@
                     @endforeach
                 </div>
 
-
-                <div class="d-flex justify-content-between">
-                    <a href="{{ route('professionnels.index') }}" class="btn btn-secondary">Retour</a>
-                    <button type="submit" class="btn btn-primary">Mettre à jour</button>
+                <h3>CV Actuel</h3>
+                @if($professionnel->cv_path)
+                <div class="iframe-container">
+                    <iframe src="data:application/pdf;base64,{{ base64_encode($professionnel->cv_path) }}" allowfullscreen></iframe>
                 </div>
-            </form>
+                @else
+                <p>Aucun CV disponible.</p>
+                @endif
+
+                <h3>Télécharger un Nouveau CV</h3>
+                <input type="file" name="cv" accept=".pdf">
         </div>
+
+        <div class="d-flex justify-content-between">
+            <a href="{{ route('professionnels.index') }}" class="btn btn-secondary">Retour</a>
+            <button type="submit" class="btn btn-primary">Mettre à jour</button>
+        </div>
+        </form>
     </div>
+</div>
 </div>
 @endsection
